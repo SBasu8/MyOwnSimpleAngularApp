@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,16 +11,15 @@ export class ViewComponent implements OnInit {
 
   uname: string;
   pass: string;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
 
   }
 
   submit(): void{
-    if(this.uname=="Suvronil" && this.pass=="Basu")
-      this.message = "Submitted!!!";
-    else this.message = "Invalid! Try again!";
+
+    this.router.navigateByUrl('login');
   }
 
 }
